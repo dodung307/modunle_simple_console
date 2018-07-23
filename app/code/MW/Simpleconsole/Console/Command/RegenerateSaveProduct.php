@@ -18,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class RegenerateSaveProduct extends Command
 {
-    const INPUT_NUMBER_PRODUCT = 'numberpr';
+
 
     /**
      * @var \Magento\Framework\ObjectManagerInterface
@@ -70,10 +70,6 @@ class RegenerateSaveProduct extends Command
     {
 
         // get store Id (if was set)
-        $numberProduct = $input->getArgument(self::INPUT_NUMBER_PRODUCT);
-        if (is_null($numberProduct)) {
-            $numberProduct = $input->getOption(self::INPUT_NUMBER_PRODUCT);
-        }
 
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // instance of object manager
         $product = $objectManager->create('\Magento\Catalog\Model\Product');

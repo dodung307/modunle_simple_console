@@ -35,12 +35,10 @@ class RegenerateSaveProduct extends Command
      */
     public function __construct(
         \Magento\Framework\App\ResourceConnection $resource,
-        \Magento\Framework\ObjectManagerInterface $objectmanager,
         \Magento\Framework\App\State $appState
     ) {
         $this->_resource = $resource;
         $this->_appState = $appState;
-        $this->_objectManager = $objectmanager;
         parent::__construct();
     }
 
@@ -71,8 +69,8 @@ class RegenerateSaveProduct extends Command
 
         // get store Id (if was set)
 
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // instance of object manager
-        $product = $objectManager->create('\Magento\Catalog\Model\Product');
+        $objectManager1 = \Magento\Framework\App\ObjectManager::getInstance(); // instance of object manager
+        $product = $objectManager1->create('\Magento\Catalog\Model\Product');
         $product->setSku('my-sku'); // Set your sku here
         $product->setName('Sample Simple Product'); // Name of Product
         $product->setAttributeSetId(4); // Attribute set id

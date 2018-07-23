@@ -97,7 +97,6 @@ class RegenerateSaveProduct extends Command
         $output->writeln('');
         $output->writeln('');
         $output->writeln('Reindexation...');
-        shell_exec('php bin/magento indexer:reindex');
 
         $output->writeln('Cache refreshing...');
         shell_exec('php bin/magento cache:clean');
